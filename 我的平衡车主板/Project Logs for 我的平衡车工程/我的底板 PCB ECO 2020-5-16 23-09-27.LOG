@@ -1,0 +1,35 @@
+Added Component: Designator=*2(STM32_DIP30)
+Add component. Clean all parameters for all variants
+Added Pin To Net: NetName=5V Pin=*2-1
+Added Pin To Net: NetName=GND Pin=*2-2
+Added Pin To Net: NetName=PB6 Pin=*2-3
+Added Pin To Net: NetName=PB7 Pin=*2-4
+Added Pin To Net: NetName=PB8 Pin=*2-5
+Added Pin To Net: NetName=PB9 Pin=*2-6
+Added Pin To Net: NetName=PC13 Pin=*2-7
+Added Pin To Net: NetName=PC14 Pin=*2-8
+Added Pin To Net: NetName=PC15 Pin=*2-9
+Added Pin To Net: NetName=PA0 Pin=*2-10
+Added Pin To Net: NetName=PA1 Pin=*2-11
+Added Pin To Net: NetName=PA2 Pin=*2-12
+Added Pin To Net: NetName=PA3 Pin=*2-13
+Added Pin To Net: NetName=GND Pin=*2-14
+Added Pin To Net: NetName=3V3 Pin=*2-15
+Added Pin To Net: NetName=PA6 Pin=*2-16
+Added Pin To Net: NetName=PA7 Pin=*2-17
+Added Pin To Net: NetName=PB0 Pin=*2-18
+Added Pin To Net: NetName=PB1 Pin=*2-19
+Added Pin To Net: NetName=PB10 Pin=*2-20
+Added Pin To Net: NetName=PB11 Pin=*2-21
+Added Pin To Net: NetName=PB12 Pin=*2-22
+Added Pin To Net: NetName=PB13 Pin=*2-23
+Added Pin To Net: NetName=PB14 Pin=*2-24
+Added Pin To Net: NetName=PB15 Pin=*2-25
+Added Pin To Net: NetName=PA8 Pin=*2-26
+Added Pin To Net: NetName=PA11 Pin=*2-27
+Added Pin To Net: NetName=PA12 Pin=*2-28
+Added Pin To Net: NetName=GND Pin=*2-29
+Added Pin To Net: NetName=3V3 Pin=*2-30
+Added Member To Class: ClassName=我的底板 Member=Component *2 STM32F103C8T6
+Added Member To Class: ClassName=我的底板 Member=Component * 电源T头
+Added Room: Name=我的底板

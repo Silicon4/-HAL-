@@ -1,0 +1,40 @@
+完成全部功能，包含3种模式，采用：
+1、蓝牙遥控，2、线性CCD巡线，3、超声波避障
+使用的片上资源：
+TIMER定时器：
+TIM1：CH1/CH2：输出两路PWM，驱动电机
+TIM2：CH1/CH2（PA0/1）：编码器模式读取电机编码盘
+TIM3：CH3（PB0）：输入捕获模式，读取超声波
+TIM4：CH1/CH2（PB6/7）：编码器模式读取电机编码盘
+ADC模数转换：
+ADC1：用于读取线性CCD的一列模拟输出
+EXTI外部中断：
+EXTI12（PA12）：接收MPU6050中断
+串口USART：
+UART3：连接蓝牙模块
+
+GPIO：
+PB12/13/14/15：推挽输出，用于驱动电机
+PB1：推挽输出，用于驱动超声波模块
+PA2/7：推挽输出，模拟SI和CLK，用于驱动线性CCD
+PB8/9：推挽输出，模拟IIC，驱动MPU6050
+
+串口蓝牙遥控码：
+	if(huart->Instance==USART3)//如果是串口3
+	{
+		if(__HAL_UART_GET_FLAG( &huart3, UART_FLAG_RXNE ) != RESET) //接收到数据
+		{
+			if(aRxBuffer[0]==0x5A)	Flag_Qian=0,Flag_Hou=0,Flag_Left=0,Flag_Right=0;//制动
+			else if(aRxBuffer[0]==0x41)	Flag_Qian=1,Flag_Hou=0,Flag_Left=0,Flag_Right=0;//前
+			else if(aRxBuffer[0]==0x45)	Flag_Qian=0,Flag_Hou=1,Flag_Left=0,Flag_Right=0;//后
+			else if(aRxBuffer[0]==0x42||aRxBuffer[0]==0x43||aRxBuffer[0]==0x44)	
+														Flag_Qian=0,Flag_Hou=0,Flag_Left=0,Flag_Right=1;  //左
+			else if(aRxBuffer[0]==0x46|aRxBuffer[0]==0x47||aRxBuffer[0]==0x48)	    //右
+														Flag_Qian=0,Flag_Hou=0,Flag_Left=1,Flag_Right=0;
+			else if(aRxBuffer[0]==0x61) mode_flag = 0;			//模式0：遥控
+			else if(aRxBuffer[0]==0x62) mode_flag = 1;			//模式1：CCD循迹
+			else if(aRxBuffer[0]==0x63) mode_flag = 2;			//模式2：超声波避障
+			
+			else Flag_Qian=0,Flag_Hou=0,Flag_Left=0,Flag_Right=0;//////////////刹车
+		}
+	}

@@ -1,0 +1,39 @@
+V4.1完成全部功能，包含2种模式，采用：
+1、红外遥控，2、线性CCD巡线
+使用的片上资源：
+TIMER定时器：
+TIM1：CH1/CH2：输出两路PWM，驱动电机
+TIM2：CH1/CH2（PA0/1）：编码器模式读取电机编码盘
+TIM3：CH3（PB0）：输入捕获模式，中断接收处理红外信号
+TIM4：CH1/CH2（PB6/7）：编码器模式读取电机编码盘
+ADC模数转换：
+ADC1：用于读取线性CCD的一列模拟输出
+EXTI外部中断：
+EXTI12（PA12）：接收MPU6050中断
+
+GPIO：
+PB12/13/14/15：推挽输出，用于驱动电机
+PB1：推挽输出，用于驱动超声波模块
+PA2/7：推挽输出，模拟SI和CLK，用于驱动线性CCD
+PB8/9：推挽输出，模拟IIC，驱动MPU6050
+
+由于红外接收占用定时器资源，本处理器暂时无法添加超声波模块
+
+红外期间地址为宏定义：#define REMOTE_ID 0
+红外遥控NEC码：
+void read_yaokong(void)
+{
+	u8 key;
+	key = Remote_Scan();
+	switch (key)
+	{
+		case 24: Flag_Qian=1,Flag_Hou=0,Flag_Left=0,Flag_Right=0; break;	//前进
+		case 74: Flag_Qian=0,Flag_Hou=1,Flag_Left=0,Flag_Right=0; break;	//后退
+		case 16: Flag_Qian=0,Flag_Hou=0,Flag_Left=1,Flag_Right=0; break;	//左转
+		case 90: Flag_Qian=0,Flag_Hou=0,Flag_Left=0,Flag_Right=1; break;	//右转
+		case 56: Flag_Qian=0,Flag_Hou=0,Flag_Left=0,Flag_Right=0; break;	//停止
+		case 162: mode_flag = 0; break;	//遥控模式
+		case 98: mode_flag = 1; break;	//CCD循迹模式
+		case 226: mode_flag = 2; break;	//超声波避障模式
+	}
+}

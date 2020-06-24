@@ -1,0 +1,36 @@
+Change component parameters: Designator = "E1"; Footprint = "CAP 2.0*5*11"; UniqueID = "\MBOAACNW"
+Change component parameters. Clean all parameters for all variants
+Change component parameters (AddParameter): Name = "BOM名称"; Value = "直插电解电容"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "学习资源"; Value = "www.ooocke.com"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "版权归属"; Value = "源创客"; VariantName = "[No Variations]"
+Change component parameters: Designator = "S1"; Footprint = "MTS-10x"; UniqueID = "\VYZWKSGN"
+Change component parameters. Clean all parameters for all variants
+Change component parameters (AddParameter): Name = "BOM名称"; Value = "MTS10x系列3脚扭子开关"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "学习资源"; Value = "www.ooocke.com"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "版权归属"; Value = "源创客"; VariantName = "[No Variations]"
+Added Component: Designator=J2(HDR1X5)
+Add component. Clean all parameters for all variants
+Added Component: Designator=J3(HDR1X5)
+Add component. Clean all parameters for all variants
+Added Component: Designator=J4(4P)
+Add component. Clean all parameters for all variants
+Added Pin To Net: NetName=GND Pin=J2-1
+Added Pin To Net: NetName=GND Pin=J2-2
+Added Pin To Net: NetName=3V3 Pin=J2-3
+Added Pin To Net: NetName=3V3 Pin=J2-4
+Added Pin To Net: NetName=5V Pin=J2-5
+Added Pin To Net: NetName=PC13 Pin=J3-1
+Added Pin To Net: NetName=PC14 Pin=J3-2
+Added Pin To Net: NetName=PC15 Pin=J3-3
+Added Pin To Net: NetName=PA7 Pin=J3-4
+Added Pin To Net: NetName=5V Pin=J3-5
+Added Pin To Net: NetName=PA2 Pin=J4-1
+Added Pin To Net: NetName=PA3 Pin=J4-2
+Added Pin To Net: NetName=GND Pin=J4-3
+Added Pin To Net: NetName=3V3 Pin=J4-4
+Added Member To Class: ClassName=我的底板 Member=Component *2 STM32F103C8T6
+Added Member To Class: ClassName=我的底板 Member=Component * 电源T头
+Added Member To Class: ClassName=我的底板 Member=Component J2 拓展电源
+Added Member To Class: ClassName=我的底板 Member=Component J3 拓展IO1
+Added Member To Class: ClassName=我的底板 Member=Component J4 拓展IO2
+Added Room: Name=我的底板

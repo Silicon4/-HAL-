@@ -1,0 +1,4 @@
+Removed Pin From Net: NetName=12V Pin=S1-1
+Added Pin To Net: NetName=12V Pin=S1-3
+Added Member To Class: ClassName=我的底板 Member=Component * 电源T头
+Added Room: Name=我的底板
